@@ -6,14 +6,27 @@
   "component": {
     "default": {
       "customTemplates": {
-        "component": "templates/component/index.jsx",
-        "style": "templates/component/default.module.css"
+        "component": "templates/component/index.jsx"
       },
       "path": "src/components",
+      "withLazy": true,
+      "withStory": true,
       "withStyle": true,
-      "withTest": false,
+      "withTest": true
+    },
+    "page": {
+      "path": "src/pages",
+      "withLazy": false,
       "withStory": false,
-      "withLazy": false
+      "withStyle": true,
+      "withTest": true
+    },
+    "layout": {
+      "path": "src/layout",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": false,
+      "withTest": true
     }
   }
 }

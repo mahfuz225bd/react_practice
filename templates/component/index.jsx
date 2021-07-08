@@ -3,7 +3,7 @@ import React from 'react';
 
 const ComponentName = () => (
   <div>
-    
+    <p>Lorem.</p>
   </div>
 );
 
