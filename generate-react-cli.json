@@ -5,12 +5,9 @@
   "testLibrary": "Testing Library",
   "component": {
     "default": {
-      "customTemplates": {
-        "component": "templates/component/index.jsx"
-      },
       "path": "src/components",
-      "withLazy": true,
-      "withStory": true,
+      "withLazy": false,
+      "withStory": false,
       "withStyle": true,
       "withTest": true
     },
