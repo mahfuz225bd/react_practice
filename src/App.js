@@ -1,25 +1,41 @@
-// import logo from './logo.svg';
+import "./App.css";
 
-import './App.css';
+import Profile from "./components/Profile/Profile";
 
-// Bootstrap
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
+const skills = ["HTML5", "CSS3", "Javascript", "Bootstrap", "JQuery", "React"]
 
-// Font Awesome
-import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
-
-// Jquery
-import '../node_modules/jquery/dist/jquery.min'
-
-
-import Profile from './components/Profile/Profile';
-
+const socialLinks = [
+  {
+    icon: 'fab fa-facebook-f',
+    url: '',
+    label: 'Facebook'
+  },
+  {
+    icon: 'fab fa-twitter',
+    url: '',
+    label: 'Twitter'
+  },
+  {
+    icon: 'fab fa-linkedin',
+    url: '',
+    label: 'LinkedIn'
+  },
+  {
+    icon: 'fab fa-github',
+    url: '',
+    label: 'GitHub'
+  }
+]
 
 function App() {
   return (
     <div>
-      <Profile name="Muhammad Sultan Al Mahfuz" title="Web Designer and Developer" skills={["HTML5", "CSS3", "Javascript", "Bootstrap", "JQuery", "React"]} />
+      <Profile
+        name="Muhammad Sultan Al Mahfuz"
+        title="Web Designer and Developer"
+        skills={skills}
+        socialLinks={socialLinks}        
+      />
     </div>
   );
 }
