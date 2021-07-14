@@ -1,12 +1,13 @@
 import React from "react";
-import SocialLinks from "../SocialLinks/SocialLinks";
+import SocialLinks from "./SocialLinks/SocialLinks";
 import Skills from "./Skills/Skills";
 //import PropTypes from "prop-types";
 //import styles from './Profile.module.css';
 
 const Profile = (props) => {
   return (
-    <div className="container">
+    <div className="container pt-3">
+      <h2>Profile Component Example</h2>
       <div className="card m-4">
         <div className="card-body">
           <h4 className="card-title">{props.name}</h4>
