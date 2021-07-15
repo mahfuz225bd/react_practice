@@ -48,11 +48,11 @@ const navLinks = [
 
 const dropDownLinks = [
   {
-    href: '/components/profile',
+    href: '/components/profiles',
     label: 'Profile'
   },
   {
-    href: '#',
+    href: '/components/navbar',
     label: 'Navbar'
   },
   {

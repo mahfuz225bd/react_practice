@@ -7,32 +7,9 @@ import {
 } from "react-router-dom";
 
 import "./App.css";
-
-import Profile from "./components/Profile/Profile";
 import Header from "./layout/Header/Header";
 
-const socialLinks = [
-  {
-    icon: "fab fa-facebook-f",
-    url: "",
-    label: "Facebook",
-  },
-  {
-    icon: "fab fa-twitter",
-    url: "",
-    label: "Twitter",
-  },
-  {
-    icon: "fab fa-linkedin",
-    url: "",
-    label: "LinkedIn",
-  },
-  {
-    icon: "fab fa-github",
-    url: "",
-    label: "GitHub",
-  },
-];
+import Profiles from "./pages/Profiles/Profiles";
 
 class App extends React.Component {
   render() {
@@ -58,13 +35,11 @@ class App extends React.Component {
               <Page title="Contact" />
             </Route>
             {/* Components */}
-            <Route path="/components/profile">
-              <Profile 
-                name="Muhammad Sultan Al Mahfuz"
-                title="Web Developer and Designer"
-                skills={["HTML5", "CSS4", "Javascript", "JQuery"]}
-                socialLinks={socialLinks}
-              />
+            <Route path="/components/profiles">
+              <Profiles />
+            </Route>
+            <Route path="/components/navbar">
+              <Page title="Navbar Component is Located Above" />
             </Route>
           </Switch>
         </Router>
