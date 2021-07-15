@@ -8,8 +8,7 @@ const SocialLinks = (props) => (
       {props.socialLinks.map((socialLink) => (
         <a href={socialLink.url} type="button" className="btn btn-dark m-1">
           <i className={socialLink.icon}></i>
-          &nbsp;
-          {socialLink.label}
+          <span className="d-none d-md-inline">&nbsp;{socialLink.label}</span>
         </a>
       ))}
     </div>
