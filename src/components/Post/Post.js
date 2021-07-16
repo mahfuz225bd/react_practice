@@ -12,7 +12,10 @@ const PostHeader = (props) => (
           <img
             src={props.profileImg}
             alt="Profile Image"
-            className="rounded-circle"
+            className="profile-img rounded-circle"
+            style={{
+              width: "45px",
+            }}
           />
         ) : (
           <i className="fas fa-user-circle fs-1"></i>
@@ -27,51 +30,57 @@ const PostHeader = (props) => (
 );
 
 class ToggleLike extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      liked: this.props.liked
-    }
+      liked: this.props.liked,
+    };
   }
 
-  handleToggleLike(){
+  handleToggleLike() {
     if (this.state.liked) {
       this.setState({
-        liked: false
-      })
+        liked: false,
+      });
     } else {
       this.setState({
-        liked: true
-      })
+        liked: true,
+      });
     }
   }
 
   render() {
-    return <div className="row mt-2">
-    <div className="col">
-      <form>
-        <input
-          type="checkbox"
-          className="btn-check"
-          id="like-unlike"
-          autocomplete="off"
-          checked={this.state.liked}
-        />
-        <label className="btn btn-outline-primary" for="like-unlike" onClick={this.handleToggleLike.bind(this)}>
-          <i className="far fa-thumbs-up"></i>
-          &nbsp;
-          {this.state.liked ? "Liked" : "Like"}
-        </label>
-      </form>
-    </div>
-  </div>
+    return (
+      <div className="row mt-2">
+        <div className="col">
+          <form id={"form-post-like-unlike#" + this.props.postId}>
+            <input
+              type="checkbox"
+              className="btn-check"
+              id={"like-unlike-post#" + this.props.postId}
+              autocomplete="off"
+              checked={this.state.liked}
+            />
+            <label
+              className="btn btn-outline-primary"
+              id={"like-unlike-post#" + this.props.postId}
+              onClick={this.handleToggleLike.bind(this)}
+            >
+              <i className="far fa-thumbs-up"></i>
+              &nbsp;
+              {this.state.liked ? "Liked" : "Like"}
+            </label>
+          </form>
+        </div>
+      </div>
+    );
   }
 }
 
 const PostArea = (props) => (
   <div
     className="container bg-light border border-secondary rounded-3 my-2 p-3"
-    id="posts"
+    id={'post#' + props.postId}
   >
     {props.children}
   </div>
@@ -80,7 +89,7 @@ const PostArea = (props) => (
 class Post extends React.Component {
   render() {
     return (
-      <PostArea>
+      <PostArea id={this.props.postId}>
         <PostHeader
           profileImg={this.props.profileImg}
           author={this.props.author}
@@ -92,13 +101,14 @@ class Post extends React.Component {
           hasThumbnail={this.props.hasThumbnail}
           thumbnailSrc={this.props.thumbnailSrc}
         />
-        <ToggleLike liked={this.props.liked} />
+        <ToggleLike liked={this.props.liked} postId={this.props.postId} />
       </PostArea>
     );
   }
 }
 
 Post.propTypes = {
+  postId: PropTypes.string,
   profileImg: PropTypes.string,
   author: PropTypes.string,
   datetime: PropTypes.string,
@@ -106,22 +116,11 @@ Post.propTypes = {
   text: PropTypes.string,
   hasThumbnail: PropTypes.bool,
   thumbnailSrc: PropTypes.string,
-  liked: PropTypes.bool
+  liked: PropTypes.bool,
 };
 
-// Post.defaultProps = {
-//   hasThumbnail: true
-// };
-
 Post.defaultProps = {
-  profileImg: "",
-  author: "Author",
-  datetime: "Fri Jul 16 2021 01:49",
-  title: "Post Title",
-  text: "Post Text",
   hasThumbnail: true,
-  thumbnailSrc: "",
-  liked: false
 };
 
 export default Post;
