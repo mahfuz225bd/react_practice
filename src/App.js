@@ -8,6 +8,7 @@ import {
 
 import "./App.css";
 import Header from "./layout/Header/Header";
+import Posts from "./pages/Posts/Posts";
 
 import Profiles from "./pages/Profiles/Profiles";
 
@@ -40,6 +41,9 @@ class App extends React.Component {
             </Route>
             <Route path="/components/navbar">
               <Page title="Navbar Component is Located Above" />
+            </Route>
+            <Route path="/components/posts">
+              <Posts />
             </Route>
           </Switch>
         </Router>

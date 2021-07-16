@@ -39,7 +39,7 @@ class PostText extends React.Component {
           <p className="mb-0">
             <span>
               {this.state.toggledMore ? this.props.text : this.props.text.substring(0, 200)}
-              {this.state.textMessage.length >= 200 && '...'}
+              {this.props.text.length >= 200 && '...'}
             </span>
             &nbsp;
             <a href="javascript:void(0)" onClick={this.handleMoreLessToggler.bind(this)}>
