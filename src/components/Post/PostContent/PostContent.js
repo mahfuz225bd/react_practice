@@ -16,7 +16,6 @@ class PostText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      textMessage: this.props.text.substring(0, 200),
       toggledMore: false
     };
   }
@@ -24,12 +23,10 @@ class PostText extends React.Component {
   handleMoreLessToggler() {
     if (!this.state.toggledMore) {
       this.setState({
-        textMessage: this.props.text,
         toggledMore: true
       })
     } else {
       this.setState({
-        textMessage: this.props.text.substring(0, 200),
         toggledMore: false
       })
     }
@@ -40,7 +37,10 @@ class PostText extends React.Component {
         <div className="col-12">
           <h4 className="text-center text-muted">{this.props.title}</h4>
           <p className="mb-0">
-            <span>{this.state.textMessage}{this.state.textMessage.length >= 200 && '...'}</span>
+            <span>
+              {this.state.toggledMore ? this.props.text : this.props.text.substring(0, 200)}
+              {this.state.textMessage.length >= 200 && '...'}
+            </span>
             &nbsp;
             <a href="javascript:void(0)" onClick={this.handleMoreLessToggler.bind(this)}>
               {this.state.textMessage.length >= 200 ? (this.state.toggledMore ? 'Show less' : 'Learn More'): ''}
