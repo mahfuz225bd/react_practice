@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from './Post.module.css';
 
 import PostContent from "./PostContent/PostContent";
 
@@ -12,10 +13,7 @@ const PostHeader = (props) => (
           <img
             src={props.profileImg}
             alt="Profile Image"
-            className="profile-img rounded-circle"
-            style={{
-              width: "45px",
-            }}
+            className={["rounded-circle", styles['profile-img']].join(' ')}
           />
         ) : (
           <i className="fas fa-user-circle fs-1"></i>
@@ -79,7 +77,7 @@ class ToggleLike extends React.Component {
 
 const PostArea = (props) => (
   <div
-    className="container bg-light border border-secondary rounded-3 my-2 p-3"
+    className={["container bg-light border border-secondary rounded-3 my-2 p-3", styles['my-container']].join(' ')}
     id={'post#' + props.postId}
   >
     {props.children}
@@ -89,7 +87,7 @@ const PostArea = (props) => (
 class Post extends React.Component {
   render() {
     return (
-      <PostArea id={this.props.postId}>
+      <PostArea postId={this.props.postId}>
         <PostHeader
           profileImg={this.props.profileImg}
           author={this.props.author}

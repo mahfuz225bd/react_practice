@@ -9,7 +9,7 @@ function makeTitleCase(str) {
     .join(" ");
 }
 
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 100; i++) {
   data.push({
     postId: faker.datatype.uuid(),
     profileImg: faker.internet.avatar(),

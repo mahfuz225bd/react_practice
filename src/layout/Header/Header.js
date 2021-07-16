@@ -60,8 +60,8 @@ const dropDownLinks = [
     label: 'Posts'
   },
   {
-    href: '/components/youtube_search',
-    label: 'Youtube Search'
+    href: '/components/youtube_search_result',
+    label: 'Youtube Search Result'
   },
   {
     href: '/components/timer_app',
@@ -72,8 +72,8 @@ const dropDownLinks = [
     label: 'Calculator'
   },
   {
-    href: '/components/event_handler',
-    label: 'Event Handler'
+    href: '/components/event_handler_examples',
+    label: 'Event Handler Examples'
   },
   {
     href: '/components/two_way_data_binding',

@@ -7,9 +7,6 @@ const Thumbnail = (props) => (
       src={props.src || "https://via.placeholder.com/300?text=Thumbnail"}
       alt=""
       className="w-100"
-      style={{
-        height: "500px",
-      }}
     />
   </div>
 );
@@ -42,8 +39,7 @@ class PostText extends React.Component {
             <span>
               {this.state.toggledMore
                 ? this.props.text
-                : this.props.text.substring(0, 200)}
-              {this.props.text.length >= 200 && "..."}
+                : this.props.text.substring(0, 200) + '...'}
             </span>
             &nbsp;
             <a

@@ -6,7 +6,8 @@ import Post from "../../components/Post/Post";
 import data from './fakeData'
 
 const Posts = () => (
-  <div>
+  <div className="container pt-3">
+    <h2>Post Component Example \w 100 Fake Data</h2>
     {data.map(each => (
       <Post
       postId={each.postId}
