@@ -43,7 +43,7 @@ class PostText extends React.Component {
             </span>
             &nbsp;
             <a href="javascript:void(0)" onClick={this.handleMoreLessToggler.bind(this)}>
-              {this.state.textMessage.length >= 200 ? (this.state.toggledMore ? 'Show less' : 'Learn More'): ''}
+              {this.props.text.length >= 200 ? (this.state.toggledMore ? 'Show less' : 'Learn More'): ''}
             </a>
           </p>
         </div>
