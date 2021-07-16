@@ -77,7 +77,7 @@ class ToggleLike extends React.Component {
 
 const PostArea = (props) => (
   <div
-    className={["container bg-light border border-secondary rounded-3 my-2 p-3", styles['my-container']].join(' ')}
+    className={["bg-light border border-secondary rounded-3 my-2 p-3 mx-auto", styles['my-container']].join(' ')}
     id={'post#' + props.postId}
   >
     {props.children}
