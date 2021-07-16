@@ -56,31 +56,31 @@ const dropDownLinks = [
     label: 'Navbar'
   },
   {
-    href: '#posts',
+    href: '/components/posts',
     label: 'Posts'
   },
   {
-    href: '#youtube_search',
+    href: '/components/youtube_search',
     label: 'Youtube Search'
   },
   {
-    href: '#timer_app',
+    href: '/components/timer_app',
     label: 'Timer App'
   },
   {
-    href: '#calculator',
+    href: '/components/calculator',
     label: 'Calculator'
   },
   {
-    href: '#event_handler',
+    href: '/components/event_handler',
     label: 'Event Handler'
   },
   {
-    href: '#two_way_data_binding',
+    href: '/components/two_way_data_binding',
     label: 'Two Way Data Binding'
   },
   {
-    href: '#select_input',
+    href: '/components/select_input',
     label: 'Select Input'
   }
 ]
