@@ -34,12 +34,14 @@ class PostText extends React.Component {
     return (
       <>
         <div className="col-12">
-          {this.props.title && <h4 className="text-center text-muted">{this.props.title}</h4>}
+          {this.props.title && (
+            <h4 className="text-center text-muted">{this.props.title}</h4>
+          )}
           <p className="mb-0">
             <span>
               {this.state.toggledMore
                 ? this.props.text
-                : this.props.text.substring(0, 200) + '...'}
+                : this.props.text.substring(0, 200) + "..."}
             </span>
             &nbsp;
             <a
@@ -70,7 +72,12 @@ function PostContent(props) {
   );
 }
 
-PostContent.propTypes = {};
+PostContent.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string,
+  hasThumbnail: PropTypes.bool,
+  thumbnailSrc: PropTypes.string
+};
 
 PostContent.defaultProps = {};
 

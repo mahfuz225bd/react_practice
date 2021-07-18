@@ -16,7 +16,9 @@ const Skills = (props) => (
   </>
 );
 
-Skills.propTypes = {};
+Skills.propTypes = {
+  skill: PropTypes.string
+};
 
 Skills.defaultProps = {};
 

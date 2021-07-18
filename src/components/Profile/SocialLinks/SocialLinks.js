@@ -15,7 +15,13 @@ const SocialLinks = (props) => (
   </>
 );
 
-SocialLinks.propTypes = {};
+SocialLinks.propTypes = {
+  socialLinks: {
+    url: PropTypes.string,
+    icon: PropTypes.string,
+    label: PropTypes.string
+  }
+};
 
 SocialLinks.defaultProps = {};
 

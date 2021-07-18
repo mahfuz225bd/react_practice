@@ -1,12 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const shortNum = require('number-shortener')
+import styles from "./SearchListItem.module.css";
+
+const shortNum = require("number-shortener");
 
 const Thumbnail = (props) => (
   <a href={props.videoSrc} className="text-decoration-none">
     <div className="flex-shrink-0">
-      <img src={props.src || "https://via.placeholder.com/240"} alt="" />
+      {props.src ? (
+        <img
+          src={props.src}
+          alt="Thumbnail Image"
+          className={styles["thumbnail-img"]}
+        />
+      ) : (
+        <img src={"https://via.placeholder.com/240"} alt="Thumbnail Image" />
+      )}
     </div>
   </a>
 );
@@ -15,7 +25,7 @@ const SearchItemHeader = (props) => (
   <a href={props.videoSrc} className="text-decoration-none text-dark">
     <h4>{props.title}</h4>
     <p className="text-muted">
-      <span>{props.views}</span> | <span>{props.datetime}</span>
+      <span>{props.views} views</span> | <span>{props.datetime}</span>
     </p>
   </a>
 );
@@ -24,9 +34,9 @@ const ChannelInfo = (props) => (
   <a href={props.src} className="d-flex text-muted text-decoration-none">
     {props.imgSrc ? (
       <img
-        src={props.channelProfileImgSrc}
+        src={props.imgSrc}
         alt="Channel Profile Image"
-        className="rounded-circle"
+        className={["rounded-circle", styles["channelProfileImg"]].join(" ")}
       />
     ) : (
       <i className="fas fa-user-circle fs-3"></i>
@@ -55,7 +65,10 @@ const SearchListItemArea = (props) => (
 );
 
 const SearchListItem = (props) => (
-  <SearchListItemArea thumbnailImgSrc={props.thumbnailImgSrc} videoSrc={props.videoSrc}>
+  <SearchListItemArea
+    thumbnailImgSrc={props.thumbnailImgSrc}
+    videoSrc={props.videoSrc}
+  >
     <SearchItemHeader
       title={props.title}
       views={shortNum(props.views).toString().toUpperCase()}
@@ -67,7 +80,7 @@ const SearchListItem = (props) => (
       src={props.channelSrc}
       imgSrc={props.channelProfileImgSrc}
     />
-    <VideoDescription text={props.description} />
+    <VideoDescription text={props.description} videoSrc={props.videoSrc} />
   </SearchListItemArea>
 );
 
@@ -80,7 +93,7 @@ SearchListItem.propTypes = {
   channelName: PropTypes.string,
   channelSrc: PropTypes.string,
   channelProfileImgSrc: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
 };
 
 SearchListItem.defaultProps = {};

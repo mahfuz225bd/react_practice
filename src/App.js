@@ -11,6 +11,7 @@ import Header from "./layout/Header/Header";
 
 import Posts from "./pages/Posts/Posts";
 import Profiles from "./pages/Profiles/Profiles";
+import YoutubeSearchResult from "./pages/YoutubeSearchResult/YoutubeSearchResult";
 
 class App extends React.Component {
   render() {
@@ -44,6 +45,9 @@ class App extends React.Component {
             </Route>
             <Route path="/components/posts">
               <Posts />
+            </Route>
+            <Route path="/components/youtube_search_result">
+              <YoutubeSearchResult />
             </Route>
           </Switch>
         </Router>
