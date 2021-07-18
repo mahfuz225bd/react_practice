@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+const shortNum = require('number-shortener')
+
 const Thumbnail = (props) => (
   <a href={props.videoSrc} className="text-decoration-none">
     <div className="flex-shrink-0">
@@ -56,7 +58,7 @@ const SearchListItem = (props) => (
   <SearchListItemArea thumbnailImgSrc={props.thumbnailImgSrc} videoSrc={props.videoSrc}>
     <SearchItemHeader
       title={props.title}
-      views={props.views}
+      views={shortNum(props.views).toString().toUpperCase()}
       datetime={props.datetime}
       videoSrc={props.videoSrc}
     />
