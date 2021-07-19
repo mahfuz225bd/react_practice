@@ -11,6 +11,7 @@ import Header from "./layout/Header/Header";
 
 import Posts from "./pages/Posts/Posts";
 import Profiles from "./pages/Profiles/Profiles";
+import SelectInputExample from "./pages/SelectInputExample/SelectInputExample";
 import YoutubeSearchResult from "./pages/YoutubeSearchResult/YoutubeSearchResult";
 
 class App extends React.Component {
@@ -49,6 +50,9 @@ class App extends React.Component {
             <Route path="/components/youtube_search_result">
               <YoutubeSearchResult />
             </Route>
+            <Route path="/components/select_input_example">
+              <SelectInputExample />
+            </Route>
           </Switch>
         </Router>
       </>
@@ -63,5 +67,6 @@ function Page(props) {
     </div>
   );
 }
+
 
 export default App;

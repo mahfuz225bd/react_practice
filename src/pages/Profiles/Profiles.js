@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Profile from "../../components/Profile/Profile";
 
-import data from "./fakeData";
+import data from "../../assets/data/fakeProfiles";
 
 const Profiles = () => (
   <div className="container pt-3">

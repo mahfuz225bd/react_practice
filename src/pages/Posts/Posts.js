@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Post from "../../components/Post/Post";
 
-import data from './fakeData'
+import data from '../../assets/data/fakePosts'
 
 const Posts = () => (
   <div className="container pt-3">

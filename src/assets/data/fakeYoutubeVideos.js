@@ -1,12 +1,5 @@
 const faker = require("faker");
 
-const today = new Date().toLocaleDateString("en-US", {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
-
 const data = [];
 
 const NUM_SHORTNER_RANGE = {
@@ -24,20 +17,18 @@ const NUM_SHORTNER_RANGE = {
   }
 }
 
-let generateChannelName = () => {
-  const myVar = faker.lorem.sentence(faker.datatype.number({ min: 1, max: 3 }));
-  // For avoiding Full Stop(.) at the end
-  return myVar.substring(0, myVar.length - 1);
-};
+const avoidFullStop = (myStr) => {
+  return myStr.substring(0, myStr.length - 1)
+}
 
-for (let i = 0; i < 15; i++) {
-  let getChannelName = generateChannelName();
+for (let i = 0; i < 150; i++) {
+  let generateChannelName = avoidFullStop(faker.lorem.sentence(faker.datatype.number({ min: 1, max: 3 })));
   let uuid = faker.datatype.uuid();
   data.push({
     id: uuid,
     thumbnailImgSrc: faker.image.image(),
     videoSrc: "#video/" + uuid,
-    title: faker.lorem.sentence(),
+    title: avoidFullStop(faker.lorem.sentence()),
     views: faker.helpers.shuffle([
       faker.datatype.number({min: 0, max: NUM_SHORTNER_RANGE['K'].max}),
       faker.datatype.number({min: NUM_SHORTNER_RANGE['M'].min, max: NUM_SHORTNER_RANGE['M'].max}),
@@ -49,8 +40,8 @@ for (let i = 0; i < 15; i++) {
       month: "long",
       day: "numeric",
     }),
-    channelName: getChannelName,
-    channelSrc: "#channel/" + getChannelName,
+    channelName: generateChannelName,
+    channelSrc: "#channel/" + generateChannelName,
     channelProfileImgSrc: faker.internet.avatar(),
     description: faker.lorem.paragraph(),
   });

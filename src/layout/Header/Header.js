@@ -77,10 +77,10 @@ const dropDownLinks = [
   },
   {
     href: '/components/two_way_data_binding',
-    label: 'Two Way Data Binding'
+    label: 'Name List'
   },
   {
-    href: '/components/select_input',
+    href: '/components/select_input_example',
     label: 'Select Input'
   }
 ]

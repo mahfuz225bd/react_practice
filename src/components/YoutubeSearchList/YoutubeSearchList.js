@@ -6,7 +6,7 @@ import SearchListItem from "./SearchListItem/SearchListItem";
 const SearchList = (props) => <div className="col-12">{props.children}</div>;
 
 const SearchBox = (props) => (
-  <form className="mt-4 mb-2" onSubmit={props.onFormSubmit}>
+  <form className="mt-4 mb-2" id="searchVideos" onSubmit={props.onFormSubmit}>
     <div className="input-group">
       <input
         className="form-control"
@@ -47,13 +47,16 @@ class YoutubeSearchList extends React.Component {
               .includes(this.state.searchValue.toLowerCase()) ||
             eachData.description
               .toLowerCase()
+              .includes(this.state.searchValue.toLowerCase()) ||
+            eachData.channelName
+              .toLowerCase()
               .includes(this.state.searchValue.toLowerCase())
         ),
       });
     } else {
       this.setState({
-        data: this.props.data
-      })
+        data: this.props.data,
+      });
     }
   }
 
@@ -66,11 +69,13 @@ class YoutubeSearchList extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.filterData();
+    this.props.totalFound(this.state.data.length);
   }
 
   handleSearchKeyUp(event) {
     if (event.keyCode === 13) {
       this.filterData();
+      this.props.totalFound(this.state.data.length);
     }
   }
 

@@ -1,14 +1,41 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import YoutubeSearchList from '../../components/YoutubeSearchList/YoutubeSearchList';
+import React from "react";
+import PropTypes from "prop-types";
+import YoutubeSearchList from "../../components/YoutubeSearchList/YoutubeSearchList";
 
-import data from './fakeData'
+import enableAllBootstrapTooltip from "../../assets/js/enableAllBootstrapTooltip";
 
-const YoutubeSearchResult = () => (
-  <div className="container">
-    <YoutubeSearchList data={data} />
-  </div>
-);
+import data from "../../assets/data/fakeYoutubeVideos";
+
+class YoutubeSearchResult extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      totalFound: 0,
+    };
+  }
+
+  totalFound = (records) => {
+    this.setState({ totalFound: records });
+  };
+
+  handleLoad() {
+    enableAllBootstrapTooltip()
+  }
+
+  render() {
+    return (
+      <div className="container pt-3" onLoad={this.handleLoad}>
+        <h2>Youtube Search Result with Dummy Data</h2>
+        <h6>
+          {this.state.totalFound > 0 &&
+            this.state.totalFound !== data.length &&
+            `Search Result: Total found ${this.state.totalFound}`}
+        </h6>
+        <YoutubeSearchList data={data} totalFound={this.totalFound} />
+      </div>
+    );
+  }
+}
 
 YoutubeSearchResult.propTypes = {};
 
