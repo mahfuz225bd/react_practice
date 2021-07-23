@@ -11,8 +11,9 @@ import Header from "./layout/Header/Header";
 
 import Posts from "./pages/Posts/Posts";
 import Profiles from "./pages/Profiles/Profiles";
-import SelectInputExample from "./pages/SelectInputExample/SelectInputExample";
 import YoutubeSearchResult from "./pages/YoutubeSearchResult/YoutubeSearchResult";
+import NameInputExample from "./pages/NameInputExample/NameInputExample";
+import SelectInputExample from "./pages/SelectInputExample/SelectInputExample";
 
 class App extends React.Component {
   render() {
@@ -50,7 +51,19 @@ class App extends React.Component {
             <Route path="/components/youtube_search_result">
               <YoutubeSearchResult />
             </Route>
-            <Route path="/components/select_input_example">
+            <Route path="/components/timer_app">
+
+            </Route>
+            <Route path="/components/calculator">
+
+            </Route>
+            <Route path="/components/event_handler_examples">
+
+            </Route>
+            <Route path="/components/name_input">
+              <NameInputExample />
+            </Route>
+            <Route path="/components/select_input">              
               <SelectInputExample />
             </Route>
           </Switch>

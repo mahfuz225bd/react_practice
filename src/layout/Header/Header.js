@@ -76,11 +76,11 @@ const dropDownLinks = [
     label: 'Event Handler Examples'
   },
   {
-    href: '/components/two_way_data_binding',
-    label: 'Name List'
+    href: '/components/name_input',
+    label: 'Name Input'
   },
   {
-    href: '/components/select_input_example',
+    href: '/components/select_input',
     label: 'Select Input'
   }
 ]

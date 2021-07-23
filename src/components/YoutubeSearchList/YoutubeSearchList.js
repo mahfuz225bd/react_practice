@@ -15,7 +15,6 @@ const SearchBox = (props) => (
         aria-label="Search"
         value={props.value}
         onChange={props.onChangeInput}
-        onKeyUp={props.onKeyUpInput}
       />
       <button className="btn btn-outline-secondary" type="submit">
         <i class="fa fa-search"></i>
@@ -33,7 +32,6 @@ class YoutubeSearchList extends React.Component {
     };
 
     this.handleChangeSearchValue = this.handleChangeSearchValue.bind(this);
-    this.handleSearchKeyUp = this.handleSearchKeyUp.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -72,13 +70,6 @@ class YoutubeSearchList extends React.Component {
     this.props.totalFound(this.state.data.length);
   }
 
-  handleSearchKeyUp(event) {
-    if (event.keyCode === 13) {
-      this.filterData();
-      this.props.totalFound(this.state.data.length);
-    }
-  }
-
   render() {
     return (
       <>
@@ -86,7 +77,6 @@ class YoutubeSearchList extends React.Component {
           value={this.state.searchValue}
           onFormSubmit={this.handleSubmit}
           onChangeInput={this.handleChangeSearchValue}
-          onKeyUpInput={this.handleSearchKeyUp}
         />
         <SearchList>
           {this.state.data.map((each) => (
