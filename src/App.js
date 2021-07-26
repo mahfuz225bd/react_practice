@@ -9,9 +9,11 @@ import {
 import "./App.css";
 import Header from "./layout/Header/Header";
 
-import Posts from "./pages/Posts/Posts";
 import Profiles from "./pages/Profiles/Profiles";
+import Posts from "./pages/Posts/Posts";
 import YoutubeSearchResult from "./pages/YoutubeSearchResult/YoutubeSearchResult";
+import Calculator from "./pages/Calculator/Calculator"
+import EventHandlerExamples from "./pages/EventHandlerExamples/EventHandlerExamples"
 import NameInputExample from "./pages/NameInputExample/NameInputExample";
 import SelectInputExample from "./pages/SelectInputExample/SelectInputExample";
 
@@ -55,10 +57,10 @@ class App extends React.Component {
 
             </Route>
             <Route path="/components/calculator">
-
+              <Calculator />
             </Route>
             <Route path="/components/event_handler_examples">
-
+              <EventHandlerExamples />
             </Route>
             <Route path="/components/name_input">
               <NameInputExample />

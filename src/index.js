@@ -10,6 +10,8 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // Font Awesome
 import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle"
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

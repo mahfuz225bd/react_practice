@@ -14,7 +14,4 @@ for (let i = 0; i < PROGRAMMING_LANGUAGES.length; i++) {
     })    
 }
 
-console.log(data);
-
-
 export default data;

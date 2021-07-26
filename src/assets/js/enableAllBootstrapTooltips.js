@@ -1,6 +1,6 @@
-import bootstrapJS from '../../../node_modules/bootstrap/dist/js/bootstrap.bundle'
+import bootstrapJS from 'bootstrap/dist/js/bootstrap.bundle.min'
 
-function enableAllBootstrapTooltip() {
+function enableAllBootstrapTooltips() {
   var tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
   );
@@ -9,4 +9,4 @@ function enableAllBootstrapTooltip() {
   });
 }
 
-export default enableAllBootstrapTooltip;
+export default enableAllBootstrapTooltips;

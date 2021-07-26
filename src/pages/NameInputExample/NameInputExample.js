@@ -61,7 +61,7 @@ const NameList = (props) => (
 );
 
 const NameInputExampleArea = (props) => (
-  <div className="container mt-3">
+  <div className="container pt-3">
     <h2>Name Input Example</h2>
     <div className="row row-cols-1 row-cols-md-2">{props.children}</div>
   </div>

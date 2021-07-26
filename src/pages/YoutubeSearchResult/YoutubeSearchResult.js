@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import YoutubeSearchList from "../../components/YoutubeSearchList/YoutubeSearchList";
 
-import enableAllBootstrapTooltip from "../../assets/js/enableAllBootstrapTooltip";
+import enableAllBootstrapTooltips from "../../assets/js/enableAllBootstrapTooltips";
 
 import data from "../../assets/data/fakeYoutubeVideos";
 
@@ -19,7 +19,7 @@ class YoutubeSearchResult extends React.Component {
   };
 
   handleLoad() {
-    enableAllBootstrapTooltip()
+    enableAllBootstrapTooltips()
   }
 
   render() {
