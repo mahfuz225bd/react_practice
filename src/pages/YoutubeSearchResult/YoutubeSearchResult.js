@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import YoutubeSearchList from "../../components/YoutubeSearchList/YoutubeSearchList";
+import React from 'react';
+// import PropTypes from 'prop-types';
+import YoutubeSearchList from '../../components/YoutubeSearchList/YoutubeSearchList';
 
-import enableAllBootstrapTooltips from "../../assets/js/enableAllBootstrapTooltips";
+import enableAllBootstrapTooltips from '../../assets/js/enableAllBootstrapTooltips';
 
-import data from "../../assets/data/fakeYoutubeVideos";
+import data from '../../assets/data/fakeYoutubeVideos';
 
 class YoutubeSearchResult extends React.Component {
   constructor(props) {
@@ -19,13 +19,13 @@ class YoutubeSearchResult extends React.Component {
   };
 
   handleLoad() {
-    enableAllBootstrapTooltips()
+    enableAllBootstrapTooltips();
   }
 
   render() {
     return (
-      <div className="container pt-3" onLoad={this.handleLoad}>
-        <h2>Youtube Search Result with Dummy Data</h2>
+      <div className="container py-3" onLoad={this.handleLoad}>
+        <h2>Youtube Search with Dummy Data</h2>
         <h6>
           {this.state.totalFound > 0 &&
             this.state.totalFound !== data.length &&
@@ -37,8 +37,8 @@ class YoutubeSearchResult extends React.Component {
   }
 }
 
-YoutubeSearchResult.propTypes = {};
+// YoutubeSearchResult.propTypes = {};
 
-YoutubeSearchResult.defaultProps = {};
+// YoutubeSearchResult.defaultProps = {};
 
 export default YoutubeSearchResult;

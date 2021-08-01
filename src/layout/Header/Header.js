@@ -1,107 +1,80 @@
-import React from "react";
-import PropTypes from "prop-types";
-import NavbarLinks from "./NavbarLinks/NavbarLinks";
-import Searchbar from "./Searchbar/Searchbar";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Brand = (props) => (
-  <a href="/" className="navbar-brand">
-    {props.name}
-  </a>
-);
+import Brand from './Brand/Brand';
+import { Navbar, NavbarItem } from './Navbar/Navbar';
+import SearchBox from './SearchBox/SearchBox';
 
-const TogglerButton = (props) => (
-  <button
-    className="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target={props.target}
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span className="navbar-toggler-icon"></span>
-  </button>
-);
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchValue: '',
+    };
 
-const navLinks = [
-  {
-    href: '/',
-    label: 'Home'
-  },
-  {
-    href: '/about',
-    label: 'About'
-  },
-  {
-    href: '/services',
-    label: 'Services'
-  },
-  {
-    href: '/products',
-    label: 'Products'
-  },
-  {
-    href: '/contact',
-    label: 'Contact'
+    this.handleSearchValue = this.handleSearchValue.bind(this)
   }
-]
 
-const dropDownLinks = [
-  {
-    href: '/components/profiles',
-    label: 'Profiles'
-  },
-  {
-    href: '/components/navbar',
-    label: 'Navbar'
-  },
-  {
-    href: '/components/posts',
-    label: 'Posts'
-  },
-  {
-    href: '/components/youtube_search_result',
-    label: 'Youtube Search Result'
-  },
-  {
-    href: '/components/timer_app',
-    label: 'Timer App'
-  },
-  {
-    href: '/components/calculator',
-    label: 'Calculator'
-  },
-  {
-    href: '/components/event_handler_examples',
-    label: 'Event Handler Examples'
-  },
-  {
-    href: '/components/name_input',
-    label: 'Name Input'
-  },
-  {
-    href: '/components/select_input',
-    label: 'Select Input'
+  handleSearchValue(event) {
+    console.log(event);
+    // this.setState({
+    //   searchValue: event.target.value
+    // })
   }
-]
 
-const Header = () => (
-  <>
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <Brand name="Logo" />
-        <TogglerButton target="#navbarSupportedContent" />
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <NavbarLinks navLinks={navLinks} dropDown1Links={dropDownLinks} />
-          <Searchbar />
-        </div>        
-      </div>
-    </nav>
-  </>
-);
+  handleSearch(event) {
+    event.preventDefault();
+    // if (this.state.searchValue) {
+    //   alert('The search action is not ready for search operation.')
+    // }
+    console.log(this.state);
+  }
 
-Header.propTypes = {};
+  render() {
+    return (
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+        <div className="container-fluid">
+          <div>
+            <Brand name={this.props.brandName} />
+          </div>
+          <div className="flex-fill">
+            <SearchBox
+              value={this.state.searchValue}
+              onChangeSearchInput={this.handleSearchValue}
+              onSubmit={this.handleSearch}
+            />
+          </div>
+          <div>
+            <Navbar>
+              {this.props.navItems.map((each, index) => (
+                <NavbarItem
+                  href={each.href}
+                  label={each.label}
+                  iconClass={each.iconClass}
+                  active={window.location.pathname === each.href}
+                  key={index}
+                />
+              ))}
+            </Navbar>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+}
 
-Header.defaultProps = {};
+Header.propTypes = {
+  brandName: PropTypes.string,
+  navItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      iconClass: PropTypes.string,
+      active: PropTypes.bool.isRequired,
+    })
+  ),
+};
+
+// Header.defaultProps = {};
 
 export default Header;

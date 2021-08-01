@@ -1,4 +1,4 @@
-import bootstrapJS from 'bootstrap/dist/js/bootstrap.bundle.min'
+import bootstrapJS from 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function enableAllBootstrapTooltips() {
   var tooltipTriggerList = [].slice.call(

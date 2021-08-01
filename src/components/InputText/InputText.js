@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 const InputText = (props) => (
   <>
-    <label htmlFor={props.id} class="form-label">
+    <label htmlFor={props.id} className="form-label">
       {props.label}
     </label>
     <input
       type="text"
-      class="form-control"
+      className="form-control"
       id={props.id}
       placeholder={props.placeholder}
       value={props.value}

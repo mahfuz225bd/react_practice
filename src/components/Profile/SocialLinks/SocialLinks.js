@@ -1,12 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const SocialLinks = (props) => (
   <>
     <h5>Social Links</h5>
     <div className="btn-group">
-      {props.socialLinks.map((socialLink) => (
-        <a href={socialLink.url} type="button" className="btn btn-dark m-1">
+      {props.links.map((socialLink) => (
+        <a
+          href={socialLink.href}
+          type="button"
+          className="btn btn-dark m-1"
+          key={SocialLinks.label}
+        >
           <i className={socialLink.icon}></i>
           <span className="d-none d-md-inline">&nbsp;{socialLink.label}</span>
         </a>
@@ -16,13 +21,15 @@ const SocialLinks = (props) => (
 );
 
 SocialLinks.propTypes = {
-  socialLinks: {
-    url: PropTypes.string,
-    icon: PropTypes.string,
-    label: PropTypes.string
-  }
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string.isRequired,
+      icon: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
-SocialLinks.defaultProps = {};
+// SocialLinks.defaultProps = {};
 
 export default SocialLinks;

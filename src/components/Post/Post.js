@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Post.module.css';
 
-import PostContent from "./PostContent/PostContent";
+import PostContent from './PostContent/PostContent';
 
 const PostHeader = (props) => (
   <div className="row">
@@ -13,7 +13,7 @@ const PostHeader = (props) => (
           <img
             src={props.profileImg}
             alt="Profile Image"
-            className={["rounded-circle", styles['profile-img']].join(' ')}
+            className={['rounded-circle', styles['profile-img']].join(' ')}
           />
         ) : (
           <i className="fas fa-user-circle fs-1"></i>
@@ -51,22 +51,22 @@ class ToggleLike extends React.Component {
     return (
       <div className="row mt-2">
         <div className="col">
-          <form id={"form-post-like-unlike#" + this.props.postId}>
+          <form id={'form-post-like-unlike#' + this.props.postId}>
             <input
               type="checkbox"
               className="btn-check"
-              id={"like-unlike-post#" + this.props.postId}
+              id={'like-unlike-post#' + this.props.postId}
               autocomplete="off"
               checked={this.state.liked}
             />
             <label
               className="btn btn-outline-primary"
-              id={"like-unlike-post#" + this.props.postId}
+              id={'like-unlike-post#' + this.props.postId}
               onClick={this.handleToggleLike.bind(this)}
             >
               <i className="far fa-thumbs-up"></i>
               &nbsp;
-              {this.state.liked ? "Liked" : "Like"}
+              {this.state.liked ? 'Liked' : 'Like'}
             </label>
           </form>
         </div>
@@ -77,7 +77,10 @@ class ToggleLike extends React.Component {
 
 const PostArea = (props) => (
   <div
-    className={["bg-light border border-secondary rounded-3 my-2 p-3 mx-auto", styles['my-container']].join(' ')}
+    className={[
+      'bg-light border border-secondary rounded-3 my-2 p-3 mx-auto',
+      styles['my-container'],
+    ].join(' ')}
     id={'post#' + props.postId}
   >
     {props.children}
@@ -106,15 +109,15 @@ class Post extends React.Component {
 }
 
 Post.propTypes = {
-  postId: PropTypes.string,
-  profileImg: PropTypes.string,
-  author: PropTypes.string,
-  datetime: PropTypes.string,
+  postId: PropTypes.string.isRequired,
+  profileImg: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  datetime: PropTypes.string.isRequired,
   title: PropTypes.string,
-  text: PropTypes.string,
-  hasThumbnail: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+  hasThumbnail: PropTypes.bool.isRequired,
   thumbnailSrc: PropTypes.string,
-  liked: PropTypes.bool,
+  liked: PropTypes.bool.isRequired,
 };
 
 Post.defaultProps = {

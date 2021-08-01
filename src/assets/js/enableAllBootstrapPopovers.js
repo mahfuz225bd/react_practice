@@ -1,4 +1,4 @@
-import bootstrapJS from "../../../node_modules/bootstrap/dist/js/bootstrap.bundle";
+import bootstrapJS from '../../../node_modules/bootstrap/dist/js/bootstrap.bundle';
 
 function enableAllBootstrapPopovers() {
   var popoverTriggerList = [].slice.call(

@@ -1,71 +1,104 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import "./App.css";
-import Header from "./layout/Header/Header";
+import './App.css';
+import Header from './layout/Header/Header';
 
-import Profiles from "./pages/Profiles/Profiles";
-import Posts from "./pages/Posts/Posts";
-import YoutubeSearchResult from "./pages/YoutubeSearchResult/YoutubeSearchResult";
-import Calculator from "./pages/Calculator/Calculator"
-import EventHandlerExamples from "./pages/EventHandlerExamples/EventHandlerExamples"
-import NameInputExample from "./pages/NameInputExample/NameInputExample";
-import SelectInputExample from "./pages/SelectInputExample/SelectInputExample";
+import Profiles from './pages/Profiles/Profiles';
+import Posts from './pages/Posts/Posts';
+import YoutubeSearchResult from './pages/YoutubeSearchResult/YoutubeSearchResult';
+import Calculator from './pages/Calculator/Calculator';
+import EventHandlerExamples from './pages/EventHandlerExamples/EventHandlerExamples';
+import NameInputExample from './pages/NameInputExample/NameInputExample';
+import SelectInputExample from './pages/SelectInputExample/SelectInputExample';
+
+const NAVBAR_LINKS = [
+  {
+    href: '/',
+    label: 'Home',
+    iconClass: 'fas fa-home'
+  },
+  {
+    href: '/profiles',
+    label: 'Profiles',
+    iconClass: 'fas fa-id-card',
+  },
+  {
+    href: '/navbar',
+    label: 'Navbar',
+    iconClass: 'fas fa-bars',
+  },
+  {
+    href: '/posts',
+    label: 'Posts',
+    iconClass: 'fas fa-sticky-note',
+  },
+  {
+    href: '/youtube_search_result',
+    label: 'Youtube Search',
+    iconClass: 'fas fa-search',
+  },
+  {
+    href: '/timer',
+    label: 'Timer',
+    iconClass: 'fas fa-hourglass-half',
+  },
+  {
+    href: '/calculator',
+    label: 'Calculator',
+    iconClass: 'fas fa-calculator',
+  },
+  {
+    href: '/event_handler_examples',
+    label: 'Event Handler',
+    iconClass: 'fas fa-bolt',
+  },
+  {
+    href: '/name_input',
+    label: 'Name Input',
+    iconClass: 'fas fa-list',
+  },
+  {
+    href: '/select_input',
+    label: 'Select Input',
+    iconClass: 'fas fa-check-square',
+  },
+];
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <Header brandName="My Components" navItems={NAVBAR_LINKS} />
         <Router>
           <Switch>
             {/* Pages */}
             <Route exact path="/">
               <Page title="Welcome" />
             </Route>
-            <Route path="/about">
-              <Page title="About" />
-            </Route>
-            <Route path="/services">
-              <Page title="Services" />
-            </Route>
-            <Route path="/products">
-              <Page title="Products" />
-            </Route>
-            <Route path="/contact">
-              <Page title="Contact" />
-            </Route>
-            {/* Components */}
-            <Route path="/components/profiles">
+            <Route path="/profiles">
               <Profiles />
             </Route>
-            <Route path="/components/navbar">
+            <Route path="/navbar">
               <Page title="Navbar Component is Located Above" />
             </Route>
-            <Route path="/components/posts">
+            <Route path="/posts">
               <Posts />
             </Route>
-            <Route path="/components/youtube_search_result">
+            <Route path="/youtube_search_result">
               <YoutubeSearchResult />
             </Route>
-            <Route path="/components/timer_app">
-
-            </Route>
-            <Route path="/components/calculator">
+            <Route path="/timer"></Route>
+            <Route path="/calculator">
               <Calculator />
             </Route>
-            <Route path="/components/event_handler_examples">
+            <Route path="/event_handler_examples">
               <EventHandlerExamples />
             </Route>
-            <Route path="/components/name_input">
+            <Route path="/name_input">
               <NameInputExample />
             </Route>
-            <Route path="/components/select_input">              
+            <Route path="/select_input">
               <SelectInputExample />
             </Route>
           </Switch>
@@ -82,6 +115,5 @@ function Page(props) {
     </div>
   );
 }
-
 
 export default App;

@@ -1,34 +1,35 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./SimpleCalculator.module.css";
+import React from 'react';
+// import PropTypes from 'prop-types';
+import styles from './SimpleCalculator.module.css';
 
-import { ButtonPanel, Button } from "./ButtonPanel/ButtonPanel";
-import Display from "./Display/Display";
+import { ButtonPanel, Button } from './ButtonPanel/ButtonPanel';
+import Display from './Display/Display';
+import { DataList, DataListItem } from '../DataList/DataList';
 
 import {
   buttonValues,
   DIV_SIGN,
   MUL_SIGN,
-} from "../../assets/data/buttonValues";
-import History from "./History/History";
+} from '../../assets/data/buttonValues';
 
 class SimpleCalculator extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      inputValue: "",
-      outputValue: "0",
+      inputValue: '',
+      outputValue: '0',
       history: [],
     };
 
-    this.hanldeInputValueChange = this.hanldeInputValueChange.bind(this);
-    this.handleOutputValueChange = this.handleOutputValueChange.bind(this);
+    this.hanldeInputValue = this.hanldeInputValue.bind(this);
+    this.handleOutputValue = this.handleOutputValue.bind(this);
     this.hanldeInsertInputValue = this.hanldeInsertInputValue.bind(this);
     this.handleClear = this.handleClear.bind(this);
     this.handleAllClear = this.handleAllClear.bind(this);
     this.hanldeEvalInput = this.hanldeEvalInput.bind(this);
     this.handleOperation = this.handleOperation.bind(this);
+    this.handleClearAllHistory = this.handleClearAllHistory.bind(this);
   }
 
   updateHistory(inputValue, outputValue) {
@@ -44,11 +45,11 @@ class SimpleCalculator extends React.Component {
     });
   }
 
-  hanldeInputValueChange(event) {
+  hanldeInputValue(event) {
     this.setState({ inputValue: event.target.value });
   }
 
-  handleOutputValueChange(event) {
+  handleOutputValue(event) {
     this.setState({ outputValue: event.target.value });
   }
 
@@ -68,14 +69,14 @@ class SimpleCalculator extends React.Component {
 
   handleAllClear() {
     this.setState({
-      inputValue: "",
-      outputValue: "0",
+      inputValue: '',
+      outputValue: '0',
     });
   }
 
   hanldeEvalInput() {
     const { inputValue } = this.state;
-    let getValidCalcInput = inputValue.replace(/×/gi, "*").replace(/÷/gi, "/");
+    let getValidCalcInput = inputValue.replace(/×/gi, '*').replace(/÷/gi, '/');
 
     // Try: Set outputValue at state \w eval getValidCalcInput
     // Catch: Replce extra zeros \w "" (at the beginning)
@@ -86,12 +87,12 @@ class SimpleCalculator extends React.Component {
         const evalValue = eval(getValidCalcInput);
         if (String(evalValue).length > 15) {
           this.setState({
-            inputValue: "",
-            outputValue: "Output exceed",
+            inputValue: '',
+            outputValue: 'Output exceed',
           });
         } else {
           this.setState({
-            inputValue: "",
+            inputValue: '',
             outputValue: evalValue,
           });
           // Update history
@@ -101,13 +102,13 @@ class SimpleCalculator extends React.Component {
     } catch (error) {
       if (
         error instanceof SyntaxError &&
-        error.message === "Octal literals are not allowed in strict mode."
+        error.message === 'Octal literals are not allowed in strict mode.'
       ) {
-        getValidCalcInput = getValidCalcInput.replace(/^0+/, "");
+        getValidCalcInput = getValidCalcInput.replace(/^0+/, '');
       } else if (isNaN(inputValue)) {
-        this.setState({ inputValue: "", outputValue: "Invalid Input" });
+        this.setState({ inputValue: '', outputValue: 'Invalid Input' });
       } else {
-        this.setState({ inputValue: "", outputValue: "Invalid Input" });
+        this.setState({ inputValue: '', outputValue: 'Invalid Input' });
       }
     }
   }
@@ -122,50 +123,80 @@ class SimpleCalculator extends React.Component {
     }
   }
 
+  handleClearAllHistory() {
+    this.setState({
+      history: [],
+    });
+  }
+
   render() {
     const { inputValue, outputValue, history } = this.state;
 
     return (
-      <div className="container row">       
+      <div className="container row">
         <div className="col">
-          <History data={history} />
-        </div>
-        <div className="col">
-          <form className={styles["calc-form"]}>
+          <form className={styles['calc-form']}>
             <Display
               inputValue={inputValue}
-              inputOnChange={this.handleInputOnChange}
+              inputOnChange={this.hanldeInputValue}
               outputValue={outputValue}
-              outputOnChange={this.handleOutputValueChange}
-              clearBtnOnClick={this.handleClear}
+              outputOnChange={this.handleOutputValue}
+              onClearInput={this.handleClear}
             />
             <ButtonPanel>
-              {buttonValues.map((each) =>
+              {buttonValues.map((each, index) =>
                 // ['AC']
-                each === "AC" ? (
-                  <Button value={each} onClick={this.handleAllClear} />
+                each === 'AC' ? (
+                  <Button
+                    value={each}
+                    onClick={this.handleAllClear}
+                    key={index}
+                  />
                 ) : // ['=']
-                each === "=" ? (
-                  <Button value={each} onClick={this.hanldeEvalInput} />
+                each === '=' ? (
+                  <Button
+                    value={each}
+                    onClick={this.hanldeEvalInput}
+                    key={index}
+                  />
                 ) : // ['+', '-', '×', '÷', '%']
-                ["+", "-", MUL_SIGN, DIV_SIGN, "%"].includes(each) ? (
-                  <Button value={each} onClick={this.handleOperation} />
+                ['+', '-', MUL_SIGN, DIV_SIGN, '%'].includes(each) ? (
+                  <Button
+                    value={each}
+                    onClick={this.handleOperation}
+                    key={index}
+                  />
                 ) : (
                   // Else
-                  <Button value={each} onClick={this.hanldeInsertInputValue} />
+                  <Button
+                    value={each}
+                    onClick={this.hanldeInsertInputValue}
+                    key={index}
+                  />
                 )
               )}
             </ButtonPanel>
-            {/* {console.log(this.state.history[this.state.history.length - 1])} */}
           </form>
+        </div>
+        <div className="col">
+          <DataList title="History" onClearAll={this.handleClearAllHistory}>
+            {[...history].reverse().map((each, index) => (
+              <DataListItem key={index}>
+                <span className="fs-5 ms-auto">
+                  {each.input} <br />
+                  {each.output} =
+                </span>
+              </DataListItem>
+            ))}
+          </DataList>
         </div>
       </div>
     );
   }
 }
 
-SimpleCalculator.propTypes = {};
+// SimpleCalculator.propTypes = {};
 
-SimpleCalculator.defaultProps = {};
+// SimpleCalculator.defaultProps = {};
 
 export default SimpleCalculator;

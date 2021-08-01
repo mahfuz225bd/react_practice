@@ -1,25 +1,36 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const SelectInputItem = props => (
+const SelectInputItem = (props) => (
   <option value={props.value}>{props.label}</option>
 );
 
 const SelectInputArea = (props) => (
   <>
     <label className="fs-5">{props.label}</label>
-    <select className="form-select form-select-lg mb-3" style={{width: '375px'}}>{props.children}</select>
+    <select
+      className="form-select form-select-lg mb-3"
+      style={{ width: '375px' }}
+    >
+      {props.children}
+    </select>
   </>
 );
 
 const SelectInput = (props) => (
-  <SelectInputArea label={props.label}>
-    {props.data.map(each => (<SelectInputItem value={each.value} label={each.label} />))}
+  <SelectInputArea label={props.inputLabel}>
+    {props.data.map((each, index) => (
+      <SelectInputItem value={each.value} label={each.label} key={index} />
+    ))}
   </SelectInputArea>
 );
 
 SelectInput.propTypes = {
-  data: PropTypes.object
+  inputLabel: PropTypes.string,
+  data: PropTypes.arrayOf({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 SelectInput.defaultProps = {};

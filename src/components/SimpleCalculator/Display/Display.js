@@ -1,23 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import styles from "./Display.module.css";
+import styles from './Display.module.css';
 
 const DisplayInput = (props) => (
   <span
-    className={[props.commonClasseNames].join(" ")}
+    className={[props.commonClasseNames].join(' ')}
     onChange={props.onChange}
   >
     {(props.value.length <= 25
       ? props.value
-      : "..." + props.value.slice(-25)) || <span>&nbsp;</span>}
+      : '...' + props.value.slice(-25)) || <span>&nbsp;</span>}
   </span>
 );
 
 const DisplayOutput = (props) => (
   <span
-    className={[props.commonClasseNames, styles["calc-display-output"]].join(
-      " "
+    className={[props.commonClasseNames, styles['calc-display-output']].join(
+      ' '
     )}
     onChange={props.onChange}
   >
@@ -27,27 +27,26 @@ const DisplayOutput = (props) => (
 
 const ClearBtn = (props) => (
   <span onClick={props.onClick} title="Clear Input">
-    <i class="fas fa-backspace"></i>
+    <i className="fas fa-backspace"></i>
   </span>
 );
 
 const PopoverInputValue = (props) => (
   <div
-    class={["position-relative", styles["calc-display-input-popover"]].join(
-      " "
+    className={['position-relative', styles['calc-display-input-popover']].join(
+      ' '
     )}
     data-bs-toggle="popover"
     title="Input Value"
     data-bs-content={props.content}
-    onLoad={props.onLoad}
   >
-    <i class="fas fa-info-circle position-absolute top-0 start-100 translate-middle p-1"></i>
+    <i className="fas fa-info-circle position-absolute top-0 start-100 translate-middle p-1"></i>
   </div>
 );
 
 function Display(props) {
   const commonClasseNames =
-    "user-select-none d-block text-end py-0 px-2 font-monospace";
+    'user-select-none d-block text-end py-0 px-2 font-monospace';
   return (
     <div className="d-table border border-secondary">
       <div className="d-table-cell w-100">
@@ -64,14 +63,28 @@ function Display(props) {
       </div>
       <div className="d-table-cell align-middle pe-2">
         <PopoverInputValue content={props.inputValue} />
-        <ClearBtn onClick={props.clearBtnOnClick} />
+        <ClearBtn onClick={props.onClearInput} />
       </div>
     </div>
   );
 }
 
-Display.propTypes = {};
+DisplayInput.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+};
 
-Display.defaultProps = {};
+DisplayOutput.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+};
+
+ClearBtn.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
+// Display.propTypes = {};
+
+// Display.defaultProps = {};
 
 export default Display;

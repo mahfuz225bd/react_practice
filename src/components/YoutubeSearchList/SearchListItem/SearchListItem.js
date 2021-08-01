@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import styles from "./SearchListItem.module.css";
+import styles from './SearchListItem.module.css';
 
-const shortNum = require("number-shortener");
+const shortNum = require('number-shortener');
 
 const Thumbnail = (props) => (
   <a href={props.videoSrc} className="text-decoration-none">
@@ -12,10 +12,10 @@ const Thumbnail = (props) => (
         <img
           src={props.src}
           alt="Thumbnail Image"
-          className={styles["thumbnail-img"]}
+          className={styles['thumbnail-img']}
         />
       ) : (
-        <img src={"https://via.placeholder.com/240"} alt="Thumbnail Image" />
+        <img src={'https://via.placeholder.com/240'} alt="Thumbnail Image" />
       )}
     </div>
   </a>
@@ -36,7 +36,7 @@ const ChannelInfo = (props) => (
       <img
         src={props.imgSrc}
         alt="Channel Profile Image"
-        className={["rounded-circle", styles["channelProfileImg"]].join(" ")}
+        className={['rounded-circle', styles['channelProfileImg']].join(' ')}
       />
     ) : (
       <i className="fas fa-user-circle fs-3"></i>
@@ -85,17 +85,17 @@ const SearchListItem = (props) => (
 );
 
 SearchListItem.propTypes = {
-  thumbnailImgSrc: PropTypes.string,
-  videoSrc: PropTypes.string,
-  title: PropTypes.string,
-  views: PropTypes.number,
-  datetime: PropTypes.string,
-  channelName: PropTypes.string,
-  channelSrc: PropTypes.string,
-  channelProfileImgSrc: PropTypes.string,
-  description: PropTypes.string,
+  thumbnailImgSrc: PropTypes.string.isRequired,
+  videoSrc: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  views: PropTypes.number.isRequired,
+  datetime: PropTypes.string.isRequired,
+  channelName: PropTypes.string.isRequired,
+  channelSrc: PropTypes.string.isRequired,
+  channelProfileImgSrc: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
-SearchListItem.defaultProps = {};
+// SearchListItem.defaultProps = {};
 
 export default SearchListItem;
