@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Thumbnail = (props) => (
   <div className="col">
     <img
-      src={props.src || "https://via.placeholder.com/300?text=Thumbnail"}
+      src={props.src || 'https://via.placeholder.com/300?text=Thumbnail'}
       alt=""
       className="w-100"
     />
@@ -41,7 +41,7 @@ class PostText extends React.Component {
             <span>
               {this.state.toggledMore
                 ? this.props.text
-                : this.props.text.substring(0, 200) + "..."}
+                : this.props.text.substring(0, 200) + '...'}
             </span>
             &nbsp;
             <a
@@ -50,9 +50,9 @@ class PostText extends React.Component {
             >
               {this.props.text.length >= 200
                 ? this.state.toggledMore
-                  ? "Show less"
-                  : "Learn More"
-                : ""}
+                  ? 'Show less'
+                  : 'Learn More'
+                : ''}
             </a>
           </p>
         </div>
@@ -63,20 +63,20 @@ class PostText extends React.Component {
 
 const PostContentArea = (props) => <div className="row">{props.children}</div>;
 
-function PostContent(props) {
+const PostContent = (props) => {
   return (
     <PostContentArea>
       <PostText title={props.title} text={props.text} />
       {props.hasThumbnail && <Thumbnail src={props.thumbnailSrc} />}
     </PostContentArea>
   );
-}
+};
 
 PostContent.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
   hasThumbnail: PropTypes.bool,
-  thumbnailSrc: PropTypes.string
+  thumbnailSrc: PropTypes.string,
 };
 
 PostContent.defaultProps = {};

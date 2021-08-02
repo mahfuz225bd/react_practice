@@ -44,7 +44,7 @@ const PopoverInputValue = (props) => (
   </div>
 );
 
-function Display(props) {
+const Display = (props) => {
   const commonClasseNames =
     'user-select-none d-block text-end py-0 px-2 font-monospace';
   return (
@@ -67,7 +67,7 @@ function Display(props) {
       </div>
     </div>
   );
-}
+};
 
 DisplayInput.propTypes = {
   value: PropTypes.string,

@@ -4,9 +4,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Header from './layout/Header/Header';
 
+import Home from './pages/Home/Home';
 import Profiles from './pages/Profiles/Profiles';
 import Posts from './pages/Posts/Posts';
+import Navbar from './pages/Navbar/Navbar';
 import YoutubeSearchResult from './pages/YoutubeSearchResult/YoutubeSearchResult';
+import Timer from './pages/Timer/Timer';
 import Calculator from './pages/Calculator/Calculator';
 import EventHandlerExamples from './pages/EventHandlerExamples/EventHandlerExamples';
 import NameInputExample from './pages/NameInputExample/NameInputExample';
@@ -16,7 +19,7 @@ const NAVBAR_LINKS = [
   {
     href: '/',
     label: 'Home',
-    iconClass: 'fas fa-home'
+    iconClass: 'fas fa-home',
   },
   {
     href: '/profiles',
@@ -74,13 +77,13 @@ class App extends React.Component {
           <Switch>
             {/* Pages */}
             <Route exact path="/">
-              <Page title="Welcome" />
+              <Home />
             </Route>
             <Route path="/profiles">
               <Profiles />
             </Route>
             <Route path="/navbar">
-              <Page title="Navbar Component is Located Above" />
+              <Navbar />
             </Route>
             <Route path="/posts">
               <Posts />
@@ -88,7 +91,9 @@ class App extends React.Component {
             <Route path="/youtube_search_result">
               <YoutubeSearchResult />
             </Route>
-            <Route path="/timer"></Route>
+            <Route path="/timer">
+              <Timer />
+            </Route>
             <Route path="/calculator">
               <Calculator />
             </Route>
@@ -106,14 +111,6 @@ class App extends React.Component {
       </>
     );
   }
-}
-
-function Page(props) {
-  return (
-    <div className="container pt-3">
-      <h2>{props.title}</h2>
-    </div>
-  );
 }
 
 export default App;
