@@ -14,7 +14,6 @@
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^5.0.2",
     "faker": "^5.5.3",
-    "jquery": "^3.6.0",
     "number-shortener": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -26,10 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "rcc": "npx generate-react-cli component",
-    "rcc-layout": "npx generate-react-cli component --type=layout",
-    "rcc-page": "npx generate-react-cli component --type=page"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
