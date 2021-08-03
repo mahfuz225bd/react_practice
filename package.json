@@ -2,6 +2,11 @@
   "name": "React Practice",
   "version": "1.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahfuz225bd/react_practice.git"
+  },
+  "author": "Muhammad Sultan Al Mahfuz",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@testing-library/jest-dom": "^5.11.4",
