@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # About the Project
 
-There are some components created \w [React.js](https://reactjs.org/). Their demo is shown on several pages. By clicking on the links, located at the navigation bar, navigate the pages.
+There are some components created \w [React.js](https://reactjs.org/), for practicing myself.
 
 ## Created Components
 

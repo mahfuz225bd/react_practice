@@ -1,6 +1,6 @@
 {
-  "name": "react_test_env",
-  "version": "0.1.0",
+  "name": "React Practice",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
