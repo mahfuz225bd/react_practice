@@ -14,10 +14,6 @@ There are some components created \w [React.js](https://reactjs.org/), for pract
 - Name Input
 - Select Input
 
-# Getting Started
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
