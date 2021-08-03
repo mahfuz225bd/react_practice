@@ -11,11 +11,11 @@ const Thumbnail = (props) => (
       {props.src ? (
         <img
           src={props.src}
-          alt="Thumbnail Image"
+          alt="Thumbnail"
           className={styles['thumbnail-img']}
         />
       ) : (
-        <img src={'https://via.placeholder.com/240'} alt="Thumbnail Image" />
+        <img src={'https://via.placeholder.com/240'} alt="Thumbnail" />
       )}
     </div>
   </a>
@@ -35,7 +35,7 @@ const ChannelInfo = (props) => (
     {props.imgSrc ? (
       <img
         src={props.imgSrc}
-        alt="Channel Profile Image"
+        alt="Channel Profile"
         className={['rounded-circle', styles['channelProfileImg']].join(' ')}
       />
     ) : (

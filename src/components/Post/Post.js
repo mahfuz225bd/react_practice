@@ -12,7 +12,7 @@ const PostHeader = (props) => (
         {props.profileImg ? (
           <img
             src={props.profileImg}
-            alt="Profile Image"
+            alt="Profile"
             className={['rounded-circle', styles['profile-img']].join(' ')}
           />
         ) : (
@@ -33,7 +33,7 @@ class ToggleLike extends React.Component {
     this.state = {
       liked: this.props.liked,
     };
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleToggleLike() {
@@ -50,8 +50,8 @@ class ToggleLike extends React.Component {
 
   handleChange(event) {
     this.setState({
-      liked: event.target.checked
-    })
+      liked: event.target.checked,
+    });
   }
 
   render() {

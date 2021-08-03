@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const InputText = (props) => (
   <>
@@ -26,7 +26,7 @@ InputText.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
-  onBlur: PropTypes.func
+  onBlur: PropTypes.func,
 };
 
 InputText.defaultProps = {};

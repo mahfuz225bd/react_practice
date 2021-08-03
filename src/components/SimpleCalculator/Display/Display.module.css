@@ -1,12 +1,12 @@
-.calc-display-output{
-    font-size: 27px;
+.calc-display-output {
+  font-size: 27px;
 }
 
-.calc-display-input-popover i{
-    margin-top: -7px;
-    margin-left: -7px;
+.calc-display-input-popover i {
+  margin-top: -7px;
+  margin-left: -7px;
 }
 
-.calc-clear-btn{
-    left: 280px;
+.calc-clear-btn {
+  left: 280px;
 }

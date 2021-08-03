@@ -1,12 +1,12 @@
-const faker = require("faker");
+const faker = require('faker');
 
 const data = [];
 
 function makeTitleCase(str) {
   return str
-    .split(" ")
+    .split(' ')
     .map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
-    .join(" ");
+    .join(' ');
 }
 
 for (let i = 0; i < 100; i++) {
@@ -14,14 +14,12 @@ for (let i = 0; i < 100; i++) {
     postId: faker.datatype.uuid(),
     profileImg: faker.internet.avatar(),
     author: faker.internet.userName(),
-    datetime: faker.datatype
-      .datetime()
-      .toLocaleDateString("en-US", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }),
+    datetime: faker.datatype.datetime().toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }),
     title: makeTitleCase(faker.lorem.sentence()),
     text: faker.helpers.shuffle([
       faker.lorem.paragraph(),

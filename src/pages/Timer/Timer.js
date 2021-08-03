@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Timer = () => (
   <div className="container pt-4">
@@ -8,8 +8,8 @@ const Timer = () => (
   </div>
 );
 
-Timer.propTypes = {};
+// Timer.propTypes = {};
 
-Timer.defaultProps = {};
+// Timer.defaultProps = {};
 
 export default Timer;

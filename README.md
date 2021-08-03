@@ -69,17 +69,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
 # About the Project
-There are some components created \w  [React.js](https://reactjs.org/). Their demo is shown on several pages. By clicking on the links, located at the navigation bar, navigate the pages.
+
+There are some components created \w [React.js](https://reactjs.org/). Their demo is shown on several pages. By clicking on the links, located at the navigation bar, navigate the pages.
 
 ## Created Components
--   Profile
--   Navbar
--   Post
--   Youtube Search Result
--   Timer
--   A Simple Calculator
--   Event Handler Examples
--   Name Input
--   Select Input
+
+- Profile
+- Navbar
+- Post
+- Youtube Search Result
+- Timer
+- A Simple Calculator
+- Event Handler Examples
+- Name Input
+- Select Input
