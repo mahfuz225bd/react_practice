@@ -1,3 +1,19 @@
+# React Component Practice
+
+There are some components created \w [React.js](https://reactjs.org/), for practicing myself.
+
+## Created Components
+
+- Profile
+- Navbar
+- Post
+- Youtube Search Result
+- Timer
+- A Simple Calculator
+- Event Handler Examples
+- Name Input
+- Select Input
+
 # Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,19 +84,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# About the Project
-
-There are some components created \w [React.js](https://reactjs.org/), for practicing myself.
-
-## Created Components
-
-- Profile
-- Navbar
-- Post
-- Youtube Search Result
-- Timer
-- A Simple Calculator
-- Event Handler Examples
-- Name Input
-- Select Input
