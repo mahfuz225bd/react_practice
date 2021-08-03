@@ -11,7 +11,7 @@ import {
 const faker = require('faker');
 
 const AddNameForm = (props) => (
-  <form className="d-flex" onSubmit={props.onSubmit} autocomplete="off">
+  <form className="d-flex" onSubmit={props.onSubmit} autoComplete="off">
     <div>
       <InputText
         label="Name"

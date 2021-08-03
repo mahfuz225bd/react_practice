@@ -12,22 +12,22 @@ class Header extends React.Component {
       searchValue: '',
     };
 
-    this.handleSearchValue = this.handleSearchValue.bind(this)
+    this.handleSearchValue = this.handleSearchValue.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleSearchValue(event) {
-    console.log(event);
-    // this.setState({
-    //   searchValue: event.target.value
-    // })
+    this.setState({
+      searchValue: event.target.value,
+    });
   }
 
   handleSearch(event) {
     event.preventDefault();
-    // if (this.state.searchValue) {
-    //   alert('The search action is not ready for search operation.')
-    // }
-    console.log(this.state);
+    alert('Pending on search operation');
+    this.setState({
+      searchValue: '',
+    });
   }
 
   render() {
@@ -70,7 +70,7 @@ Header.propTypes = {
       href: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       iconClass: PropTypes.string,
-      active: PropTypes.bool.isRequired,
+      active: PropTypes.bool,
     })
   ),
 };

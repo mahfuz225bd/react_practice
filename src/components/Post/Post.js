@@ -33,6 +33,7 @@ class ToggleLike extends React.Component {
     this.state = {
       liked: this.props.liked,
     };
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleToggleLike() {
@@ -47,6 +48,12 @@ class ToggleLike extends React.Component {
     }
   }
 
+  handleChange(event) {
+    this.setState({
+      liked: event.target.checked
+    })
+  }
+
   render() {
     return (
       <div className="row mt-2">
@@ -56,8 +63,9 @@ class ToggleLike extends React.Component {
               type="checkbox"
               className="btn-check"
               id={'like-unlike-post#' + this.props.postId}
-              autocomplete="off"
+              autoComplete="off"
               checked={this.state.liked}
+              onChange={this.handleChange}
             />
             <label
               className="btn btn-outline-primary"

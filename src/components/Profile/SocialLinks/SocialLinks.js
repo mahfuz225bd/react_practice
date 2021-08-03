@@ -10,7 +10,7 @@ const SocialLinks = (props) => (
           href={socialLink.href}
           type="button"
           className="btn btn-dark m-1"
-          key={SocialLinks.label}
+          key={socialLink.label}
         >
           <i className={socialLink.icon}></i>
           <span className="d-none d-md-inline">&nbsp;{socialLink.label}</span>

@@ -17,9 +17,12 @@ class PostText extends React.Component {
     this.state = {
       toggledMore: false,
     };
+
+    this.handleMoreLessToggler = this.handleMoreLessToggler.bind(this);
   }
 
-  handleMoreLessToggler() {
+  handleMoreLessToggler(event) {
+    event.preventDefault();
     if (!this.state.toggledMore) {
       this.setState({
         toggledMore: true,
@@ -44,10 +47,7 @@ class PostText extends React.Component {
                 : this.props.text.substring(0, 200) + '...'}
             </span>
             &nbsp;
-            <a
-              href="javascript:void(0)"
-              onClick={this.handleMoreLessToggler.bind(this)}
-            >
+            <a href="" onClick={this.handleMoreLessToggler}>
               {this.props.text.length >= 200
                 ? this.state.toggledMore
                   ? 'Show less'

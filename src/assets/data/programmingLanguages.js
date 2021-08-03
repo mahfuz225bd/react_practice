@@ -3,6 +3,7 @@ const PROGRAMMING_LANGUAGES = ['C', 'C++', 'C#', 'Python', 'Go', 'Java', 'Javasc
 const data = [
   {
     label: "(Select a Programming Language)",
+    value: ""
   }
 ];
 

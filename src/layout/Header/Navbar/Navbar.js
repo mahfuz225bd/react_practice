@@ -31,6 +31,6 @@ Navbar.propTypes = {
   id: PropTypes.string,
 };
 
-Navbar.defaultProps = {};
+// Navbar.defaultProps = {};
 
 export { Navbar, NavbarItem };

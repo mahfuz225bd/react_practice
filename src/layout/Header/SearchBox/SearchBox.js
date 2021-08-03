@@ -14,7 +14,7 @@ const SearchBox = (props) => (
       aria-label="Search"
       value={props.value}
       id={props.id}
-      onChange={props.onChangeInputValue}
+      onChange={props.onChangeSearchInput}
     />
     <button className="btn text-white-50 border-0" type="submit">
       <i className="fa fa-search" aria-hidden="true"></i>
@@ -26,7 +26,7 @@ SearchBox.propTypes = {
   id: PropTypes.string,
   value: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
-  onChangeInputValue: PropTypes.func.isRequired,
+  onChangeSearchInput: PropTypes.func.isRequired,
   autoComplete: PropTypes.bool,
 };
 

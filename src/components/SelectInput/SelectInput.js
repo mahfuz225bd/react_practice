@@ -27,12 +27,14 @@ const SelectInput = (props) => (
 
 SelectInput.propTypes = {
   inputLabel: PropTypes.string,
-  data: PropTypes.arrayOf({
-    value: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-  }).isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
-SelectInput.defaultProps = {};
+// SelectInput.defaultProps = {};
 
 export default SelectInput;
