@@ -29,9 +29,10 @@ const Home = () => (
       <li>Navbar SearchBox</li>
       <li>Fixing Youtube Search Result's state lifting isses</li>
       <li>Timer</li>
+      <li>Keyboard input action on Calculator</li>
       <li>
-        Using <cite title="What is popover?">popover</cite> for <b>History</b>{' '}
-        and <cite title="What is tooltip?">tooltip</cite> for{' '}
+        Using <cite title="A Popover is a container-type graphical control element that hovers over its parent window and blocks any other interaction with until it is selected.">popover</cite> for <b>History</b>{' '}
+        and <cite title="The tooltip, also known as infotip or hint, is a common graphical user interface element in which, when hovering over a screen element or component, a text box displays information about that element.">tooltip</cite> for{' '}
         <b>Input Dispaly</b>, when input value is truncated.
       </li>
     </ul>
