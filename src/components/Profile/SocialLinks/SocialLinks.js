@@ -8,7 +8,6 @@ const SocialLinks = (props) => (
       {props.links.map((socialLink) => (
         <a
           href={socialLink.href}
-          type="button"
           className="btn btn-dark m-1"
           key={socialLink.label}
         >
